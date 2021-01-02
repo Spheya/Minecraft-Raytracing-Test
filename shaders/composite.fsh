@@ -12,6 +12,6 @@ void main() {
     if(textureCoords.x > 0.5 || textureCoords.y > 0.5) {
         gl_FragData[0] = texture2D(colortex0, textureCoords);
     }else {
-        gl_FragData[0] = vec4(texture2D(shadowcolor0, textureCoords * 2).rgb, 1.0);
+        gl_FragData[0] = vec4(1.0 - texture2D(shadowcolor0, textureCoords * 2).rgb, 1.0);
     }
 }

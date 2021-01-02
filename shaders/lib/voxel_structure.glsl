@@ -8,13 +8,11 @@ ivec3 voxelDimensions = ivec3(2 * voxelRadius, 256, 2 * voxelRadius);
 ivec3 center = voxelDimensions / 2;
 
 bool voxelOutOfBounds(vec3 voxelSpaceCoord) {
-    return false;
+    return any(greaterThanEqual(abs(voxelSpaceCoord - center), center-vec3(0.001)));
 }
 
-vec3 worldToVoxelSpace(vec3 worldSpaceCoord) {
-    vec3 origin = cameraPosition - vec3(voxelRadius, cameraPosition.y, voxelRadius);
-
-    return worldSpaceCoord - origin;
+vec3 playerToVoxelSpace(vec3 playerSpaceCoord) {
+    return playerSpaceCoord + vec3(voxelRadius, cameraPosition.y, voxelRadius);
 }
 
 ivec2 voxelToTextureSpace(uvec3 voxelSpaceCoord) {

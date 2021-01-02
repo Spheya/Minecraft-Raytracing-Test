@@ -7,13 +7,13 @@ uniform vec3  cameraPosition;
 
 uniform mat4 shadowModelViewInverse;
 
-out vec3 worldPosition;
-out vec3 normal;
+out vec3 positionPS;
+out vec3 normalWS;
 out vec4 color;
 
 void main() {
-    normal = normalize(mat3(shadowModelViewInverse) * gl_NormalMatrix * gl_Normal);
-    worldPosition = (shadowModelViewInverse * gl_ModelViewMatrix * gl_Vertex).xyz;
+    normalWS = normalize(mat3(shadowModelViewInverse) * gl_NormalMatrix * gl_Normal);
+    positionPS = (shadowModelViewInverse * gl_ModelViewMatrix * gl_Vertex).xyz;
     color = gl_Color;
 
     gl_Position = vec4(0.0);
