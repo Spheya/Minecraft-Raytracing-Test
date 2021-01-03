@@ -1,7 +1,8 @@
-#version 120
+#version 420 compatibility
 #define VSH
+#include "lib/settings.glsl"
 
-varying vec2 textureCoords;
+out vec2 textureCoords;
 
 void main() {
 	gl_Position = ftransform();

@@ -1,4 +1,4 @@
-#version 330 compatibility
+#version 420 compatibility
 #define FSH
 #include "lib/settings.glsl"
 
