@@ -1,8 +1,6 @@
 #if !defined _INCLUDE_VOXEL_STRUCTURE_GLSL_
 #define _INCLUDE_VOXEL_STRUCTURE_GLSL_
 
-#include "settings.glsl"
-
 const int voxelizationRadius = int(shadowDistance);
 
 #ifdef LIMIT_Y_AXIS_VOXELIZATION

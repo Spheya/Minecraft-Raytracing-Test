@@ -7,6 +7,11 @@ uniform sampler2D shadowtex0;
 uniform sampler2D shadowcolor0;
 #include "lib/raytracing.glsl"
 
+uniform sampler2D depthtex1;
+uniform sampler2D depthtex2;
+uniform sampler2D shadowtex1;
+#include "lib/texturing.glsl"
+
 uniform float far;
 uniform float near;
 
@@ -25,9 +30,9 @@ void main() {
     ray.direction = normalize(ray.direction);
 
     HitPoint hit = traceRay(ray);
-    
+
     if(hit.hit) {
-        gl_FragData[0] = 0.5 * vec4(hit.color, 1.0) + 0.5 * texture2D(colortex0, textureCoords);
+        gl_FragData[0] = getAlbedo(hit);
     } else {
         gl_FragData[0] = texture2D(colortex0, textureCoords);
     }

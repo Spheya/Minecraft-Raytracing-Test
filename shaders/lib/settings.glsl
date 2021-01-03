@@ -4,6 +4,8 @@
 #define VOXELIZATION_DISTANCE 1 // [0 1 2 3 4 5]
 #define LOD_LEVELS 8 // [1 2 3 4 5 6 7 8]
 
+#define TEXTURE_RESOLUTION 16 //Resolution of textures in your resourcepack [8 16 32 64 256]
+
 #ifndef LIMIT_Y_AXIS_VOXELIZATION
 #define LIMIT_Y_AXIS_VOXELIZATION
 #endif
