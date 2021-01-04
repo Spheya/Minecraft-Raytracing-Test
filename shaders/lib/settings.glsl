@@ -1,6 +1,13 @@
 #if !defined _INCLUDE_SETTINGS_GLSL_
 #define _INCLUDE_SETTINGS_GLSL_
 
+
+const bool colortex6Clear = false;
+
+const float sunPathRotation = -40.0; // [-80.0 -70.0 -60.0 -50.0 -40.0 -30.0 -20.0 -10.0 0.0 10.0 20.0 30.0 40.0 50.0 60.0 70.0 80.0]
+
+#define PI 3.141592653
+
 #define VOXELIZATION_DISTANCE 1 // [0 1 2 3 4 5]
 #define LOD_LEVELS 8 // [1 2 3 4 5 6 7 8]
 
@@ -37,7 +44,7 @@
 
 #elif (VOXELIZATION_DISTANCE == 5)
 
-    const int shadowMapResolution = 8192;
+    const int shadowMapResolution = 16384;
     const float shadowDistance = 256;
 
 #endif

@@ -5,5 +5,5 @@
 in vec4 shadowMapData;
 
 void main() {
-    gl_FragData[0] = 1.0 - shadowMapData;
+    gl_FragData[0] = shadowMapData;
 }

@@ -32,7 +32,7 @@ void main() {
     vec2 atlasCoord = midTexcoord[0] - abs(midTexcoord[0] - texcoord[0]);
     float packedTextureCoord = packTexcoord(atlasCoord);
 
-    shadowMapData = vec4(color[0].xyz, 1.0);
+    shadowMapData = vec4(blockId[0] / 512.0, color[0].rgb);
 
     for(int lod = 0; lod < LOD_LEVELS; lod++) {
         vec2 texturePosition = voxelToTextureSpace(uvec3(voxelPosition), lod);

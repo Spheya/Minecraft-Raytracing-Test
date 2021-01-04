@@ -13,7 +13,7 @@ int voxelizationVolume = voxelDimensions.x * voxelDimensions.y * voxelDimensions
 ivec3 voxelizationCenter = voxelDimensions / 2;
 
 bool voxelOutOfBounds(vec3 voxelSpaceCoord) {
-    return any(greaterThanEqual(abs(voxelSpaceCoord - voxelizationCenter), voxelizationCenter-vec3(0.001)));
+    return any(greaterThan(abs(voxelSpaceCoord - voxelizationCenter), voxelizationCenter - vec3(0.001)));
 }
 
 bool voxelOutOfBounds(uvec3 voxelSpaceCoord) {
